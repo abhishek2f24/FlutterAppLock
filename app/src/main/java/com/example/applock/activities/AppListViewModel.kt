@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.applock.database.AppDatabase
+import com.example.applock.activities.AppDatabase
 import com.example.applock.models.AppInfo
 import com.example.applock.repository.AppRepository
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 class AppListViewModel(application: Application) : AndroidViewModel(application) {
     
     private val repository: AppRepository
-    val allLockedApps: LiveData<List<AppInfo>>
+    private val allLockedApps: LiveData<List<AppInfo>>
     private val _installedApps = MutableLiveData<List<AppInfo>>()
     val installedApps: LiveData<List<AppInfo>> = _installedApps
     
@@ -28,7 +28,7 @@ class AppListViewModel(application: Application) : AndroidViewModel(application)
         loadInstalledApps()
     }
     
-    fun loadInstalledApps() {
+    private fun loadInstalledApps() {
         viewModelScope.launch {
             _installedApps.value = getInstalledApps()
         }
@@ -53,7 +53,8 @@ class AppListViewModel(application: Application) : AndroidViewModel(application)
                 AppInfo(
                     packageName = appInfo.packageName,
                     appName = pm.getApplicationLabel(appInfo).toString(),
-                    isLocked = false
+                    isLocked = false,
+                    icon = TODO()
                 )
             }
     }

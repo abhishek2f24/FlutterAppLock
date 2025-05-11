@@ -1,10 +1,13 @@
-package com.example.applock.ads
+package com.example.applock.activities
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresPermission
 import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
@@ -23,7 +26,7 @@ class AdManager private constructor(private val context: Context) {
     private var interstitialAd: InterstitialAd? = null
     private var rewardedAd: RewardedAd? = null
     private var adCounter = 0
-    private val AD_FREQUENCY = 3 // Show interstitial every 3 actions
+    private val adfrequency = 3 // Show interstitial every 3 actions
     
     companion object {
         private const val TAG = "AdManager"
@@ -33,6 +36,7 @@ class AdManager private constructor(private val context: Context) {
         private const val INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712" // Test ID
         private const val REWARDED_AD_UNIT_ID = "ca-app-pub-3940256099942544/5224354917" // Test ID
         
+        @SuppressLint("StaticFieldLeak")
         @Volatile
         private var instance: AdManager? = null
         
@@ -50,10 +54,10 @@ class AdManager private constructor(private val context: Context) {
         }
     }
     
+    @RequiresPermission(Manifest.permission.INTERNET)
     fun loadBannerAd(adContainer: ViewGroup) {
         val adView = AdView(context)
         adView.adUnitId = BANNER_AD_UNIT_ID
-        adView.adSize = AdSize.BANNER
         
         adContainer.removeAllViews()
         adContainer.addView(adView)
@@ -116,7 +120,7 @@ class AdManager private constructor(private val context: Context) {
     fun showInterstitialIfAvailable(activity: Activity) {
         adCounter++
         
-        if (adCounter % AD_FREQUENCY != 0) {
+        if (adCounter % adfrequency != 0) {
             return
         }
         

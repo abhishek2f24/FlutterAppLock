@@ -1,4 +1,4 @@
-package com.example.applock.receivers
+package com.example.applock.recievers
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -12,11 +12,11 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         if (intent.action == Intent.ACTION_BOOT_COMPLETED) {
             val prefManager = PrefManager(context)
-            
+
             // Only start the service if it was enabled before reboot
             if (prefManager.isServiceEnabled()) {
                 val serviceIntent = Intent(context, AppMonitorService::class.java)
-                
+
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     context.startForegroundService(serviceIntent)
                 } else {
@@ -24,4 +24,4 @@ class BootReceiver : BroadcastReceiver() {
                 }
             }
         }
-    }
+    }}

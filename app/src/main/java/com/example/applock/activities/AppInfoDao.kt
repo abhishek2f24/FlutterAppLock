@@ -1,4 +1,4 @@
-package com.example.applock.database
+package com.example.applock.activities
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

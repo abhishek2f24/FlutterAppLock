@@ -1,8 +1,8 @@
 package com.example.applock
 
 import android.app.Application
-import com.example.applock.ads.AdManager
-import com.example.applock.database.AppDatabase
+import com.example.applock.activities.AdManager
+import com.example.applock.activities.AppDatabase
 import com.example.applock.repository.AppRepository
 
 class AppApplication : Application() {

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.andrognito.patternlockview.PatternLockView
 import com.andrognito.patternlockview.listener.PatternLockViewListener
+import com.example.applock.App
 import com.example.applock.R
 import com.example.applock.services.AppLockService
 import com.example.applock.utils.AdsManager
@@ -42,7 +43,7 @@ class LockActivity : AppCompatActivity() {
         adContainer = findViewById(R.id.ad_container)
 
         // Initialize AdManager
-        adsManager = (application as com.example.applock.App).adsManager
+        adsManager = (application as App).adsManager
 
         // Load banner ad
         adsManager.loadBannerAd(adContainer)
@@ -120,7 +121,7 @@ class LockActivity : AppCompatActivity() {
     private fun unlockAndLaunchApp() {
         // Mark app as temporarily unlocked
         try {
-            val service = application as? com.example.applock.App
+            val service = application as? App
             val appLockService = Intent(this, AppLockService::class.java)
             appLockService.putExtra("last_unlocked_package", packageName)
             startService(appLockService)

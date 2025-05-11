@@ -1,7 +1,7 @@
 package com.example.applock.repository
 
 import androidx.lifecycle.LiveData
-import com.example.applock.database.AppInfoDao
+import com.example.applock.activities.AppInfoDao
 import com.example.applock.models.AppInfo
 
 class AppRepository(private val appInfoDao: AppInfoDao) {
