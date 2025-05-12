@@ -30,7 +30,7 @@ class PasswordSetupActivity : AppCompatActivity() {
         supportActionBar?.title = if (isChangingPassword) "Change Password" else "Set Password"
         
         if (isChangingPassword) {
-            binding.layoutCurrentPassword.visibility = android.view.View.VISIBLE
+            binding.currentPasswordLayout.visibility = android.view.View.VISIBLE
         }
         
         setupTextWatchers()
@@ -65,7 +65,7 @@ class PasswordSetupActivity : AppCompatActivity() {
         val confirmPassword = binding.etConfirmPassword.text.toString()
         
         binding.btnSetPassword.isEnabled = if (isChangingPassword) {
-            binding.etCurrentPassword.text.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty()
+            binding.etCurrentPassword.text?.isNotEmpty()== true && password.isNotEmpty() && confirmPassword.isNotEmpty()
         } else {
             password.isNotEmpty() && confirmPassword.isNotEmpty()
         }

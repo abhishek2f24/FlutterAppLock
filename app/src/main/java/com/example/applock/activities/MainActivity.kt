@@ -89,7 +89,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun startAppLockService() {
         val serviceIntent = Intent(this, AppLockService::class.java)
-        startForegroundService(serviceIntent)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            startForegroundService(serviceIntent)
+        } else {
+            startService(serviceIntent)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

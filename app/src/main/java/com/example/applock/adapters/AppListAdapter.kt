@@ -1,5 +1,6 @@
 package com.example.applock.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,10 +30,11 @@ class AppListAdapter(private val onAppLockToggle: (AppInfo, Boolean) -> Unit) :
     inner class AppViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val appIcon: ImageView = itemView.findViewById(R.id.app_icon)
         private val appName: TextView = itemView.findViewById(R.id.app_name)
+        @SuppressLint("UseSwitchCompatOrMaterialCode")
         private val lockSwitch: Switch = itemView.findViewById(R.id.lock_switch)
 
         fun bind(appInfo: AppInfo) {
-            appIcon.setImageDrawable(appInfo.icon)
+            appIcon.setImageDrawable(appInfo.appIcon)
             appName.text = appInfo.appName
             lockSwitch.isChecked = appInfo.isLocked
 

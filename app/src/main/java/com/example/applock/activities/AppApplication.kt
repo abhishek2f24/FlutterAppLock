@@ -1,15 +1,12 @@
-package com.example.applock
+package com.example.applock.activities
 
 import android.app.Application
-import com.example.applock.activities.AdManager
-import com.example.applock.activities.AppDatabase
-import com.example.applock.repository.AppRepository
 
 class AppApplication : Application() {
     
-    val database by lazy { AppDatabase.getDatabase(this) }
+    private val database by lazy { AppDatabase.getDatabase(this) }
     val repository by lazy { AppRepository(database.appInfoDao()) }
-    lateinit var adManager: AdManager
+    private lateinit var adManager: AdManager
     
     override fun onCreate() {
         super.onCreate()

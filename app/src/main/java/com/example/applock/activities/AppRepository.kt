@@ -1,4 +1,4 @@
-package com.example.applock.repository
+package com.example.applock.activities
 
 import androidx.lifecycle.LiveData
 import com.example.applock.activities.AppInfoDao

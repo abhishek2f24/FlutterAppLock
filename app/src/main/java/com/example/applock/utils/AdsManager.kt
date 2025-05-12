@@ -25,21 +25,18 @@ class AdsManager(private val context: Context) {
 
     fun loadBannerAd(adContainer: ViewGroup) {
         val adView = AdView(context)
+        adView.setAdSize(AdSize.BANNER)
         adView.adUnitId = TEST_BANNER_ID
-        adView.adSize = AdSize.BANNER
 
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
 
-        // Add AdView to the layout
         adContainer.removeAllViews()
         adContainer.addView(adView)
 
-        // Ad load listener
         adView.adListener = object : AdListener() {
             override fun onAdFailedToLoad(error: LoadAdError) {
                 super.onAdFailedToLoad(error)
-                // Retry loading after delay
                 adContainer.postDelayed({ loadBannerAd(adContainer) }, 60000)
             }
         }
@@ -60,9 +57,10 @@ class AdsManager(private val context: Context) {
                 override fun onAdFailedToLoad(error: LoadAdError) {
                     interstitialAd = null
                     // Retry loading after delay
-                    context.mainExecutor.execute {
+                    android.os.Handler(android.os.Looper.getMainLooper()).post {
                         loadInterstitialAd()
                     }
+
                 }
             }
         )

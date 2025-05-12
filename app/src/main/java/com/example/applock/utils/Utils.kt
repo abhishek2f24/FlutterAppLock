@@ -11,6 +11,7 @@ import android.os.Process
 import android.provider.Settings
 import android.widget.Toast
 import com.example.applock.models.AppInfo
+import androidx.core.net.toUri
 
 object Utils {
     
@@ -54,7 +55,7 @@ object Utils {
     fun requestOverlayPermission(activity: Activity) {
         val intent = Intent(
             Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-            android.net.Uri.parse("package:${activity.packageName}")
+            "package:${activity.packageName}".toUri()
         )
         activity.startActivity(intent)
     }

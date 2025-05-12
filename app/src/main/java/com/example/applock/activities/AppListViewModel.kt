@@ -1,4 +1,4 @@
-package com.example.applock.viewmodels
+package com.example.applock.activities
 
 import android.app.Application
 import android.content.pm.ApplicationInfo
@@ -7,9 +7,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.applock.activities.AppDatabase
 import com.example.applock.models.AppInfo
-import com.example.applock.repository.AppRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -54,7 +52,7 @@ class AppListViewModel(application: Application) : AndroidViewModel(application)
                     packageName = appInfo.packageName,
                     appName = pm.getApplicationLabel(appInfo).toString(),
                     isLocked = false,
-                    icon = TODO()
+                    appIcon = TODO() //
                 )
             }
     }

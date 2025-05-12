@@ -5,6 +5,6 @@ import android.graphics.drawable.Drawable
 data class AppInfo(
     val packageName: String,
     val appName: String,
-    val icon: Drawable,
+    val appIcon: Drawable, // ← Add this line
     var isLocked: Boolean = false
 )

@@ -7,14 +7,14 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.andrognito.patternlockview.PatternLockView
-import com.andrognito.patternlockview.listener.PatternLockViewListener
 import com.example.applock.App
 import com.example.applock.R
 import com.example.applock.services.AppLockService
 import com.example.applock.utils.AdsManager
 import com.example.applock.utils.LockUtils
 import java.util.*
+import com.andrognito.patternlockview.PatternLockView
+import com.andrognito.patternlockview.listener.PatternLockViewListener
 
 class LockActivity : AppCompatActivity() {
 
@@ -138,7 +138,7 @@ class LockActivity : AppCompatActivity() {
         finish()
     }
 
-    override fun onBackPressed() {
+    fun onBackPressedDispatcher() {
         // Return to home screen instead of previous app
         val intent = Intent(Intent.ACTION_MAIN)
         intent.addCategory(Intent.CATEGORY_HOME)

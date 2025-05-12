@@ -1,42 +1,43 @@
 package com.example.applock.utils
 
-import android.app.ActivityManager
+import android.annotation.SuppressLint
 import android.app.usage.UsageEvents
 import android.app.usage.UsageStatsManager
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import androidx.room.Room
 import com.example.applock.activities.LockActivity
 import com.example.applock.models.AppInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.concurrent.TimeUnit
 
 /**
  * Manager class that handles app locking functionality
  */
 class AppLockManager private constructor(private val context: Context) {
-    
+
     // Room database for storing locked apps
     private val appLockDatabase = Room.databaseBuilder(
         context.applicationContext,
         AppLockDatabase::class.java,
         "app_lock_database"
     ).build()
-    
+
     private val appDao = appLockDatabase.appDao()
-    
+
     companion object {
+        @SuppressLint("StaticFieldLeak")
         @Volatile
         private var instance: AppLockManager? = null
-        
+
         fun getInstance(context: Context): AppLockManager {
             return instance ?: synchronized(this) {
                 instance ?: AppLockManager(context.applicationContext).also { instance = it }
             }
         }
     }
-    
+
     /**
      * Check if app is locked
      */
@@ -45,7 +46,7 @@ class AppLockManager private constructor(private val context: Context) {
             appDao.isAppLocked(packageName)
         }
     }
-    
+
     /**
      * Get all locked apps
      */
@@ -54,7 +55,7 @@ class AppLockManager private constructor(private val context: Context) {
             appDao.getLockedApps()
         }
     }
-    
+
     /**
      * Lock or unlock an app
      */
@@ -68,34 +69,29 @@ class AppLockManager private constructor(private val context: Context) {
             }
         }
     }
-    
+
     /**
      * Get current foreground app package name
      */
+
     fun getCurrentForegroundApp(): String? {
         val usageStatsManager = context.getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
         val time = System.currentTimeMillis()
-        
-        // Get usage stats for the last 5 seconds
+
         val usageEvents = usageStatsManager.queryEvents(time - 5000, time)
-        
-        var lastEvent: UsageEvents.Event? = null
         val event = UsageEvents.Event()
-        
-        // Find the last event
+        var currentPackageName: String? = null
+
         while (usageEvents.hasNextEvent()) {
             usageEvents.getNextEvent(event)
-            
-            // Filter for move to foreground events
             if (event.eventType == UsageEvents.Event.MOVE_TO_FOREGROUND) {
-                lastEvent = UsageEvents.Event()
-                lastEvent.copyFrom(event)
+                currentPackageName = event.packageName
             }
         }
-        
-        return lastEvent?.packageName
+
+        return currentPackageName
     }
-    
+
     /**
      * Show the lock screen for an app
      */
@@ -106,7 +102,7 @@ class AppLockManager private constructor(private val context: Context) {
         }
         context.startActivity(intent)
     }
-    
+
     /**
      * Close the Room database when the manager is no longer needed
      */
@@ -130,13 +126,13 @@ abstract class AppLockDatabase : androidx.room.RoomDatabase() {
 interface AppDao {
     @androidx.room.Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
     suspend fun insertApp(app: AppInfo)
-    
+
     @androidx.room.Query("DELETE FROM locked_apps WHERE packageName = :packageName")
     suspend fun deleteApp(packageName: String)
-    
+
     @androidx.room.Query("SELECT * FROM locked_apps")
     suspend fun getLockedApps(): List<AppInfo>
-    
+
     @androidx.room.Query("SELECT COUNT(*) > 0 FROM locked_apps WHERE packageName = :packageName")
     suspend fun isAppLocked(packageName: String): Boolean
 }

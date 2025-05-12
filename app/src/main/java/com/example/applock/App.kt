@@ -11,7 +11,7 @@ import kotlinx.coroutines.SupervisorJob
 class App : Application() {
     private val applicationScope = CoroutineScope(SupervisorJob())
 
-    val database by lazy { AppLockDatabase.getDatabase(this, applicationScope) }
+    private val database by lazy { AppLockDatabase.getDatabase(this, applicationScope) }
     val repository by lazy { AppLockRepository(database.appLockDao()) }
 
     lateinit var adsManager: AdsManager
