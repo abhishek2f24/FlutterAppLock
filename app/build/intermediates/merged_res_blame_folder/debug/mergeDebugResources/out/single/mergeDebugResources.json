@@ -1,0 +1,170 @@
+[
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-anydpi-v26_ic_unlock_round.xml.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-anydpi-v26/ic_unlock_round.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_lock.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_lock.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.applock.app-pngs-47:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxhdpi_ic_unlock.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxhdpi/ic_unlock.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable-anydpi-v24_ic_unlock_foreground.xml.flat",
+        "source": "com.example.applock.app-pngs-47:/drawable-anydpi-v24/ic_unlock_foreground.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_main_screen.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_main_screen.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/menu_main_menu.xml.flat",
+        "source": "com.example.applock.app-main-53:/menu/main_menu.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxxhdpi_ic_unlock.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxxhdpi/ic_unlock.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-hdpi_ic_unlock_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-hdpi/ic_unlock_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_item_locked_app.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/item_locked_app.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_app_selection.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_app_selection.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xhdpi_ic_unlock.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xhdpi/ic_unlock.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable_ic_unlock_background.xml.flat",
+        "source": "com.example.applock.app-main-53:/drawable/ic_unlock_background.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-mdpi_ic_unlock.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-mdpi/ic_unlock.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_pin_setup.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_pin_setup.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_settings.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xhdpi_ic_unlock_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xhdpi/ic_unlock_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable_ic_backspace.xml.flat",
+        "source": "com.example.applock.app-main-53:/drawable/ic_backspace.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable_pin_dot_selector.xml.flat",
+        "source": "com.example.applock.app-main-53:/drawable/pin_dot_selector.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable_ic_lock.xml.flat",
+        "source": "com.example.applock.app-main-53:/drawable/ic_lock.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-anydpi-v26_ic_unlock.xml.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-anydpi-v26/ic_unlock.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_item_app.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/item_app.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-hdpi_ic_unlock.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-hdpi/ic_unlock.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxxhdpi_ic_unlock_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxxhdpi/ic_unlock_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-mdpi_ic_unlock_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-mdpi/ic_unlock_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xxhdpi_ic_unlock_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xxhdpi/ic_unlock_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_password_setup.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_password_setup.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_pattern_setup.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_pattern_setup.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.applock.app-main-53:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/layout_activity_main.xml.flat",
+        "source": "com.example.applock.app-main-53:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.applock.app-debug-51:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.applock.app-main-53:/mipmap-hdpi/ic_launcher_round.webp"
+    }
+]

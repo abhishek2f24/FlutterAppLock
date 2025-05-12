@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="partial_results">
+    <map id="UnusedResources">
+        <location id="R.string.lib_name"
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="2"
+            column="13"
+            startOffset="24"
+            endLine="2"
+            endColumn="28"
+            endOffset="39"/>
+        <entry
+            name="model"
+            string="attr[dotCount(D),dotNormalSize(D),dotSelectedSize(D),pathWidth(D),aspectRatioEnabled(D),aspectRatio(D),normalStateColor(D),correctStateColor(D),wrongStateColor(D),dotAnimationDuration(D),pathEndAnimationDuration(D)],color[white(U),pomegranate(U)],dimen[pattern_lock_path_width(U),pattern_lock_dot_size(U),pattern_lock_dot_selected_size(U)],string[lib_name(D),message_pattern_dot_added(U),message_pattern_started(U),message_pattern_detected(U),message_pattern_cleared(U)],styleable[PatternLockView(U),PatternLockView_dotCount(R),PatternLockView_aspectRatioEnabled(R),PatternLockView_aspectRatio(R),PatternLockView_pathWidth(R),PatternLockView_normalStateColor(R),PatternLockView_correctStateColor(R),PatternLockView_wrongStateColor(R),PatternLockView_dotNormalSize(R),PatternLockView_dotSelectedSize(R),PatternLockView_dotAnimationDuration(R),PatternLockView_pathEndAnimationDuration(R)];;;;"/>
+    </map>
+
+</incidents>

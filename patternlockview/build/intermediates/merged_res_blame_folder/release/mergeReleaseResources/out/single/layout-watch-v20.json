@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.andrognito.patternlockview-release-22:/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "com.andrognito.patternlockview-appcompat-1.7.0-5:/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "com.andrognito.patternlockview-release-22:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "com.andrognito.patternlockview-appcompat-1.7.0-5:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    }
+]

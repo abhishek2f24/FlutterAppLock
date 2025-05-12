@@ -1,0 +1,1475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="incidents">
+
+    <incident
+        id="JcenterRepositoryObsolete"
+        severity="warning"
+        message="JCenter Maven repository is no longer receiving updates: newer library versions may be available elsewhere">
+        <fix-alternatives>
+            <fix-replace
+                description="Replace with mavenCentral"
+                oldString="jcenter"
+                replacement="mavenCentral"
+                priority="0"/>
+            <fix-replace
+                description="Delete this repository declaration"
+                replacement=""
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="72"
+            column="9"
+            startOffset="2198"
+            endLine="72"
+            endColumn="18"
+            endOffset="2207"/>
+    </incident>
+
+    <incident
+        id="DuplicateDefinition"
+        severity="error"
+        message="`colorPrimary` has already been defined in this `&lt;style>`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="7"
+            column="15"
+            startOffset="347"
+            endLine="7"
+            endColumn="34"
+            endOffset="366"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="4"
+            column="9"
+            startOffset="149"
+            endLine="4"
+            endColumn="61"
+            endOffset="201"
+            message="Previously defined here"/>
+    </incident>
+
+    <incident
+        id="DuplicateDefinition"
+        severity="error"
+        message="`colorPrimaryDark` has already been defined in this `&lt;style>`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="8"
+            column="15"
+            startOffset="428"
+            endLine="8"
+            endColumn="38"
+            endOffset="451"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="5"
+            column="9"
+            startOffset="211"
+            endLine="5"
+            endColumn="69"
+            endOffset="271"
+            message="Previously defined here"/>
+    </incident>
+
+    <incident
+        id="DuplicateDefinition"
+        severity="error"
+        message="`colorAccent` has already been defined in this `&lt;style>`">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="9"
+            column="15"
+            startOffset="506"
+            endLine="9"
+            endColumn="33"
+            endOffset="524"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
+            line="6"
+            column="9"
+            startOffset="281"
+            endLine="6"
+            endColumn="59"
+            endOffset="331"
+            message="Previously defined here"/>
+    </incident>
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 35"
+            oldString="33"
+            replacement="35"
+            priority="0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="14"
+            column="9"
+            startOffset="325"
+            endLine="14"
+            endColumn="28"
+            endOffset="344"/>
+    </incident>
+
+    <incident
+        id="AppCompatResource"
+        severity="error"
+        message="Should use `app:showAsAction` with the appcompat library with `xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;`">
+        <fix-composite
+            description="Update to `app:showAsAction`">
+            <fix-attribute
+                description="Delete showAsAction"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="showAsAction"/>
+            <fix-attribute
+                description="Set showAsAction=&quot;never&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="showAsAction"
+                value="never"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/menu/main_menu.xml"
+            line="7"
+            column="9"
+            startOffset="242"
+            endLine="7"
+            endColumn="37"
+            endOffset="270"/>
+    </incident>
+
+    <incident
+        id="UseSwitchCompatOrMaterialXml"
+        severity="warning"
+        message="Use `SwitchCompat` from AppCompat or `MaterialSwitch` from Material library">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_app.xml"
+            line="25"
+            column="5"
+            startOffset="809"
+            endLine="28"
+            endColumn="48"
+            endOffset="949"/>
+    </incident>
+
+    <incident
+        id="PluralsCandidate"
+        severity="warning"
+        message="Formatting %d followed by words (&quot;sec&quot;): This should probably be a plural rather than a string">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/strings.xml"
+            line="12"
+            column="5"
+            startOffset="632"
+            endLine="12"
+            endColumn="71"
+            endOffset="698"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="40"
+            endLine="5"
+            endColumn="17"
+            endOffset="274"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_unlock.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_launcher.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_unlock.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_launcher.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xhdpi/ic_unlock.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xhdpi/ic_launcher.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxhdpi/ic_unlock.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxhdpi/ic_launcher.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_unlock.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_launcher.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_unlock_round.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-hdpi/ic_launcher_round.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_unlock_round.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_launcher_round.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xhdpi/ic_unlock_round.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xhdpi/ic_launcher_round.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxhdpi/ic_unlock_round.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxhdpi/ic_launcher_round.webp"/>
+    </incident>
+
+    <incident
+        id="IconDuplicates"
+        severity="warning"
+        message="The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_unlock_round.webp"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-xxxhdpi/ic_launcher_round.webp"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/LockUtils.kt"
+                    startOffset="1306"
+                    endOffset="1310"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/LockUtils.kt"
+                    startOffset="1311"
+                    endOffset="1312"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/LockUtils.kt"
+                    startOffset="1341"
+                    endOffset="1349"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/LockUtils.kt"
+                    startOffset="1312"
+                    endOffset="1313"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/LockUtils.kt"
+            line="37"
+            column="13"
+            startOffset="1300"
+            endLine="37"
+            endColumn="25"
+            endOffset="1312"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2858"
+                    endOffset="2862"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2863"
+                    endOffset="2864"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2891"
+                    endOffset="2899"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2864"
+                    endOffset="2865"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+            line="96"
+            column="9"
+            startOffset="2852"
+            endLine="96"
+            endColumn="21"
+            endOffset="2864"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2963"
+                    endOffset="2967"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2968"
+                    endOffset="2969"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="3004"
+                    endOffset="3012"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+                    startOffset="2969"
+                    endOffset="2970"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PrefManager.kt"
+            line="100"
+            column="9"
+            startOffset="2957"
+            endLine="100"
+            endColumn="21"
+            endOffset="2969"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="675"
+                    endOffset="679"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="680"
+                    endOffset="681"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="718"
+                    endOffset="726"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="681"
+                    endOffset="682"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+            line="22"
+            column="9"
+            startOffset="669"
+            endLine="22"
+            endColumn="21"
+            endOffset="681"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="881"
+                    endOffset="885"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="886"
+                    endOffset="887"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="921"
+                    endOffset="929"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="887"
+                    endOffset="888"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+            line="30"
+            column="9"
+            startOffset="875"
+            endLine="30"
+            endColumn="21"
+            endOffset="887"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit"
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="1120"
+                    endOffset="1124"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with ) {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=") {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="1125"
+                    endOffset="1126"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="1158"
+                    endOffset="1166"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+                    startOffset="1126"
+                    endOffset="1127"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/utils/PreferenceUtils.kt"
+            line="39"
+            column="9"
+            startOffset="1114"
+            endLine="39"
+            endColumn="21"
+            endOffset="1126"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PatternSetupActivity.kt"
+            line="32"
+            column="41"
+            startOffset="1195"
+            endLine="32"
+            endColumn="75"
+            endOffset="1229"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PatternSetupActivity.kt"
+            line="41"
+            column="53"
+            startOffset="1656"
+            endLine="41"
+            endColumn="102"
+            endOffset="1705"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PatternSetupActivity.kt"
+            line="51"
+            column="53"
+            startOffset="2118"
+            endLine="51"
+            endColumn="86"
+            endOffset="2151"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PatternSetupActivity.kt"
+            line="65"
+            column="57"
+            startOffset="2872"
+            endLine="65"
+            endColumn="89"
+            endOffset="2904"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PinSetupActivity.kt"
+            line="30"
+            column="41"
+            startOffset="1026"
+            endLine="30"
+            endColumn="60"
+            endOffset="1045"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PinSetupActivity.kt"
+            line="87"
+            column="45"
+            startOffset="2923"
+            endLine="87"
+            endColumn="61"
+            endOffset="2939"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/PinSetupActivity.kt"
+            line="101"
+            column="49"
+            startOffset="3465"
+            endLine="101"
+            endColumn="77"
+            endOffset="3493"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="110"
+            column="32"
+            startOffset="3972"
+            endLine="110"
+            endColumn="87"
+            endOffset="4027"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="110"
+            column="33"
+            startOffset="3973"
+            endLine="110"
+            endColumn="52"
+            endOffset="3992"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="110"
+            column="60"
+            startOffset="4000"
+            endLine="110"
+            endColumn="65"
+            endOffset="4005"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="110"
+            column="82"
+            startOffset="4022"
+            endLine="110"
+            endColumn="86"
+            endOffset="4026"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="112"
+            column="32"
+            startOffset="4076"
+            endLine="112"
+            endColumn="65"
+            endOffset="4109"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="112"
+            column="33"
+            startOffset="4077"
+            endLine="112"
+            endColumn="52"
+            endOffset="4096"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/applock/activities/SettingsActivity.kt"
+            line="112"
+            column="60"
+            startOffset="4104"
+            endLine="112"
+            endColumn="64"
+            endOffset="4108"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;No apps found&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_app_selection.xml"
+            line="24"
+            column="9"
+            startOffset="800"
+            endLine="24"
+            endColumn="37"
+            endOffset="828"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Draw your pattern to unlock&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_lock.xml"
+            line="13"
+            column="9"
+            startOffset="478"
+            endLine="13"
+            endColumn="51"
+            endOffset="520"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Cancel&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_lock.xml"
+            line="37"
+            column="9"
+            startOffset="1375"
+            endLine="37"
+            endColumn="30"
+            endOffset="1396"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Select Apps to Lock&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="12"
+            column="9"
+            startOffset="419"
+            endLine="12"
+            endColumn="43"
+            endOffset="453"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Set Pattern Lock&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="19"
+            column="9"
+            startOffset="658"
+            endLine="19"
+            endColumn="40"
+            endOffset="689"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="26"
+            column="9"
+            startOffset="891"
+            endLine="26"
+            endColumn="32"
+            endOffset="914"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Main Menu&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main_screen.xml"
+            line="18"
+            column="9"
+            startOffset="684"
+            endLine="18"
+            endColumn="34"
+            endOffset="709"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Welcome to App Lock&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main_screen.xml"
+            line="26"
+            column="9"
+            startOffset="955"
+            endLine="26"
+            endColumn="43"
+            endOffset="989"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Password Setup&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_password_setup.xml"
+            line="17"
+            column="9"
+            startOffset="638"
+            endLine="17"
+            endColumn="39"
+            endOffset="668"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Enter Password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_password_setup.xml"
+            line="27"
+            column="13"
+            startOffset="1087"
+            endLine="27"
+            endColumn="42"
+            endOffset="1116"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Confirm Password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_password_setup.xml"
+            line="38"
+            column="13"
+            startOffset="1611"
+            endLine="38"
+            endColumn="44"
+            endOffset="1642"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Current Password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_password_setup.xml"
+            line="50"
+            column="13"
+            startOffset="2172"
+            endLine="50"
+            endColumn="44"
+            endOffset="2203"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Set Password&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_password_setup.xml"
+            line="57"
+            column="9"
+            startOffset="2425"
+            endLine="57"
+            endColumn="36"
+            endOffset="2452"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Draw your pattern&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pattern_setup.xml"
+            line="23"
+            column="9"
+            startOffset="971"
+            endLine="23"
+            endColumn="41"
+            endOffset="1003"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Draw your pattern&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pattern_setup.xml"
+            line="55"
+            column="9"
+            startOffset="2211"
+            endLine="55"
+            endColumn="41"
+            endOffset="2243"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Confirm Pattern&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pattern_setup.xml"
+            line="69"
+            column="9"
+            startOffset="2809"
+            endLine="69"
+            endColumn="39"
+            endOffset="2839"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Set Up PIN&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="16"
+            column="9"
+            startOffset="660"
+            endLine="16"
+            endColumn="35"
+            endOffset="686"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Enter a 4-digit PIN&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="27"
+            column="9"
+            startOffset="1080"
+            endLine="27"
+            endColumn="43"
+            endOffset="1114"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;1&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="68"
+            column="70"
+            startOffset="2820"
+            endLine="68"
+            endColumn="86"
+            endOffset="2836"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;2&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="69"
+            column="70"
+            startOffset="2909"
+            endLine="69"
+            endColumn="86"
+            endOffset="2925"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;3&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="70"
+            column="70"
+            startOffset="2998"
+            endLine="70"
+            endColumn="86"
+            endOffset="3014"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;4&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="71"
+            column="70"
+            startOffset="3087"
+            endLine="71"
+            endColumn="86"
+            endOffset="3103"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;5&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="72"
+            column="70"
+            startOffset="3176"
+            endLine="72"
+            endColumn="86"
+            endOffset="3192"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;6&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="73"
+            column="70"
+            startOffset="3265"
+            endLine="73"
+            endColumn="86"
+            endOffset="3281"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;7&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="74"
+            column="70"
+            startOffset="3354"
+            endLine="74"
+            endColumn="86"
+            endOffset="3370"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;8&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="75"
+            column="70"
+            startOffset="3443"
+            endLine="75"
+            endColumn="86"
+            endOffset="3459"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;9&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="76"
+            column="70"
+            startOffset="3532"
+            endLine="76"
+            endColumn="86"
+            endOffset="3548"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;C&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="77"
+            column="74"
+            startOffset="3625"
+            endLine="77"
+            endColumn="90"
+            endOffset="3641"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;0&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="78"
+            column="70"
+            startOffset="3714"
+            endLine="78"
+            endColumn="86"
+            endOffset="3730"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;⌫&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="79"
+            column="75"
+            startOffset="3808"
+            endLine="79"
+            endColumn="91"
+            endOffset="3824"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;PINs don&apos;t match&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_pin_setup.xml"
+            line="88"
+            column="9"
+            startOffset="4059"
+            endLine="88"
+            endColumn="40"
+            endOffset="4090"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Auto-lock timeout: 30 sec&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_settings.xml"
+            line="19"
+            column="9"
+            startOffset="650"
+            endLine="19"
+            endColumn="49"
+            endOffset="690"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Reset Pattern&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_settings.xml"
+            line="33"
+            column="9"
+            startOffset="1109"
+            endLine="33"
+            endColumn="37"
+            endOffset="1137"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Start App Lock Service&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_settings.xml"
+            line="40"
+            column="9"
+            startOffset="1342"
+            endLine="40"
+            endColumn="46"
+            endOffset="1379"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Stop App Lock Service&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_settings.xml"
+            line="47"
+            column="9"
+            startOffset="1583"
+            endLine="47"
+            endColumn="45"
+            endOffset="1619"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;App Icon&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_app.xml"
+            line="13"
+            column="9"
+            startOffset="442"
+            endLine="13"
+            endColumn="46"
+            endOffset="479"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;App Name&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_app.xml"
+            line="20"
+            column="9"
+            startOffset="662"
+            endLine="20"
+            endColumn="32"
+            endOffset="685"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;App Icon&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_locked_app.xml"
+            line="14"
+            column="9"
+            startOffset="481"
+            endLine="14"
+            endColumn="46"
+            endOffset="518"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;App Name&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_locked_app.xml"
+            line="21"
+            column="9"
+            startOffset="701"
+            endLine="21"
+            endColumn="32"
+            endOffset="724"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Unlock Icon&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_locked_app.xml"
+            line="30"
+            column="9"
+            startOffset="980"
+            endLine="30"
+            endColumn="49"
+            endOffset="1020"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Settings&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/menu/main_menu.xml"
+            line="5"
+            column="9"
+            startOffset="169"
+            endLine="5"
+            endColumn="33"
+            endOffset="193"/>
+    </incident>
+
+</incidents>

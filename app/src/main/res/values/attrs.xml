@@ -1,0 +1,27 @@
+<resources>
+    <declare-styleable name="PatternLockView">
+        <attr name="dotCount" format="integer"/>
+        <attr name="pathWidth" format="dimension"/>
+        <attr name="dotNormalSize" format="dimension"/>
+        <attr name="dotSelectedSize" format="dimension"/>
+        <attr name="dotAnimationDuration" format="integer"/>
+        <attr name="pathEndAnimationDuration" format="integer"/>
+        <attr name="aspectRatioEnabled" format="boolean"/>
+        <attr name="aspectRatio" format="enum">
+            <enum name="square" value="0"/>
+            <enum name="width_bias" value="1"/>
+            <enum name="height_bias" value="2"/>
+        </attr>
+        <attr name="normalStateColor" format="color"/>
+        <attr name="correctStateColor" format="color"/>
+        <attr name="wrongStateColor" format="color"/>
+
+        <!-- Add these two lines -->
+        <attr name="selectedStateColor" format="color"/>
+        <attr name="viewMode" format="enum">
+            <enum name="correct" value="0"/>
+            <enum name="auto_draw" value="1"/>
+            <enum name="wrong" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

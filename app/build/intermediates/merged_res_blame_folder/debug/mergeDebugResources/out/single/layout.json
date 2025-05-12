@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_lock.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_lock.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/item_app.xml",
+        "source": "com.example.applock.app-main-53:/layout/item_app.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_settings.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_main.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/item_locked_app.xml",
+        "source": "com.example.applock.app-main-53:/layout/item_locked_app.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_password_setup.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_password_setup.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_app_selection.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_app_selection.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_pin_setup.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_pin_setup.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_main_screen.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_main_screen.xml"
+    },
+    {
+        "merged": "com.example.applock.app-mergeDebugResources-50:/layout/activity_pattern_setup.xml",
+        "source": "com.example.applock.app-main-53:/layout/activity_pattern_setup.xml"
+    }
+]

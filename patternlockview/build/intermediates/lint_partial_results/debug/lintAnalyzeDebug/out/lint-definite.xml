@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.2" type="incidents">
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/utils/PatternLockUtils.java"
+            line="96"
+            column="67"
+            startOffset="3768"
+            endLine="96"
+            endColumn="78"
+            endOffset="3779"/>
+    </incident>
+
+    <incident
+        id="DefaultLocale"
+        severity="warning"
+        message="Implicitly using the default locale is a common source of bugs: Use `toLowerCase(Locale)` instead. For strings meant to be internal use `Locale.ROOT`, otherwise `Locale.getDefault()`.">
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/utils/PatternLockUtils.java"
+            line="120"
+            column="67"
+            startOffset="4787"
+            endLine="120"
+            endColumn="78"
+            endOffset="4798"/>
+    </incident>
+
+    <incident
+        id="OldTargetApi"
+        severity="warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details.">
+        <fix-replace
+            description="Update targetSdkVersion to 35"
+            oldString="34"
+            replacement="35"
+            priority="0"/>
+        <location
+            file="${:patternlockview*projectDir}/build.gradle"
+            line="9"
+            column="9"
+            startOffset="173"
+            endLine="9"
+            endColumn="28"
+            endOffset="192"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of `compileSdkVersion` than 34 is available: 35">
+        <fix-replace
+            description="Set compileSdkVersion to 35"
+            oldString="34"
+            replacement="35"
+            priority="0"/>
+        <location
+            file="${:patternlockview*projectDir}/build.gradle"
+            line="5"
+            column="5"
+            startOffset="98"
+            endLine="5"
+            endColumn="25"
+            endOffset="118"/>
+    </incident>
+
+    <incident
+        id="ParcelClassLoader"
+        severity="warning"
+        message="Passing null here (to use the default class loader) will not work if you are restoring your own classes. Consider using for example `getClass().getClassLoader()` instead.">
+        <fix-replace
+            description="Use getClass().getClassLoader()"
+            oldPattern="(null\s*\))"
+            replacement="getClass().getClassLoader())"
+            priority="0"/>
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/PatternLockView.java"
+            line="1297"
+            column="42"
+            startOffset="46050"
+            endLine="1297"
+            endColumn="57"
+            endOffset="46065"/>
+    </incident>
+
+    <incident
+        id="ParcelClassLoader"
+        severity="warning"
+        message="Passing null here (to use the default class loader) will not work if you are restoring your own classes. Consider using for example `getClass().getClassLoader()` instead.">
+        <fix-replace
+            description="Use getClass().getClassLoader()"
+            oldPattern="(null\s*\))"
+            replacement="getClass().getClassLoader())"
+            priority="0"/>
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/PatternLockView.java"
+            line="1298"
+            column="43"
+            startOffset="46109"
+            endLine="1298"
+            endColumn="58"
+            endOffset="46124"/>
+    </incident>
+
+    <incident
+        id="ParcelClassLoader"
+        severity="warning"
+        message="Passing null here (to use the default class loader) will not work if you are restoring your own classes. Consider using for example `getClass().getClassLoader()` instead.">
+        <fix-replace
+            description="Use getClass().getClassLoader()"
+            oldPattern="(null\s*\))"
+            replacement="getClass().getClassLoader())"
+            priority="0"/>
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/PatternLockView.java"
+            line="1299"
+            column="52"
+            startOffset="46177"
+            endLine="1299"
+            endColumn="67"
+            endOffset="46192"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `SDK_INT` is always >= 23">
+        <fix-data conditional="true"/>
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/PatternLockView.java"
+            line="233"
+            column="13"
+            startOffset="9569"
+            endLine="233"
+            endColumn="66"
+            endOffset="9622"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; `SDK_INT` is never &lt; 23">
+        <fix-data conditional="false"/>
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/PatternLockView.java"
+            line="1037"
+            column="13"
+            startOffset="37686"
+            endLine="1037"
+            endColumn="67"
+            endOffset="37740"/>
+    </incident>
+
+    <incident
+        id="ClickableViewAccessibility"
+        severity="warning"
+        message="Custom view `PatternLockView` overrides `onTouchEvent` but not `performClick`">
+        <location
+            file="${:patternlockview*debug*MAIN*sourceProvider*0*javaDir*0}/com/andrognito/patternlockview/PatternLockView.java"
+            line="435"
+            column="20"
+            startOffset="17630"
+            endLine="435"
+            endColumn="32"
+            endOffset="17642"/>
+    </incident>
+
+</incidents>

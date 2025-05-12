@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.andrognito.patternlockview'
+    compileSdkVersion 34
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+}

@@ -1,0 +1,107 @@
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\utils\PatternLockUtils.java:96: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                    "%0" + (digest.length * 2) + "x", bigInteger).toLowerCase();
+                                                                  ~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\utils\PatternLockUtils.java:120: Warning: Implicitly using the default locale is a common source of bugs: Use toLowerCase(Locale) instead. For strings meant to be internal use Locale.ROOT, otherwise Locale.getDefault(). [DefaultLocale]
+                    "%0" + (digest.length * 2) + "x", bigInteger).toLowerCase();
+                                                                  ~~~~~~~~~~~
+
+   Explanation for issues of type "DefaultLocale":
+   Calling String#toLowerCase() or #toUpperCase() without specifying an
+   explicit locale is a common source of bugs. The reason for that is that
+   those methods will use the current locale on the user's device, and even
+   though the code appears to work correctly when you are developing the app,
+   it will fail in some locales. For example, in the Turkish locale, the
+   uppercase replacement for i is not I.
+
+   If you want the methods to just perform ASCII replacement, for example to
+   convert an enum name, call String#toUpperCase(Locale.ROOT) instead. If you
+   really want to use the current locale, call
+   String#toUpperCase(Locale.getDefault()) instead.
+
+   https://developer.android.com/reference/java/util/Locale.html#default_locale
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\build.gradle:9: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdkVersion 34
+        ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdkVersion specifies that it has been tested with,
+   various compatibility modes kick in. This ensures that your application
+   continues to work, but it may look out of place. For example, if the
+   targetSdkVersion is less than 14, your app may get an option button in the
+   UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\build.gradle:5: Warning: A newer version of compileSdkVersion than 34 is available: 35 [GradleDependency]
+    compileSdkVersion 34
+    ~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\PatternLockView.java:1297: Warning: Passing null here (to use the default class loader) will not work if you are restoring your own classes. Consider using for example getClass().getClassLoader() instead. [ParcelClassLoader]
+            mInputEnabled = (Boolean) in.readValue(null);
+                                         ~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\PatternLockView.java:1298: Warning: Passing null here (to use the default class loader) will not work if you are restoring your own classes. Consider using for example getClass().getClassLoader() instead. [ParcelClassLoader]
+            mInStealthMode = (Boolean) in.readValue(null);
+                                          ~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\PatternLockView.java:1299: Warning: Passing null here (to use the default class loader) will not work if you are restoring your own classes. Consider using for example getClass().getClassLoader() instead. [ParcelClassLoader]
+            mTactileFeedbackEnabled = (Boolean) in.readValue(null);
+                                                   ~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ParcelClassLoader":
+   The documentation for Parcel#readParcelable(ClassLoader) (and its
+   variations) says that you can pass in null to pick up the default class
+   loader. However, that ClassLoader is a system class loader and is not able
+   to find classes in your own application.
+
+   If you are writing your own classes into the Parcel (not just SDK classes
+   like String and so on), then you should supply a ClassLoader for your
+   application instead; a simple way to obtain one is to just call
+   getClass().getClassLoader() from your own class.
+
+   https://developer.android.com/reference/android/os/Parcel.html
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\PatternLockView.java:233: Warning: Unnecessary; SDK_INT is always >= 23 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\PatternLockView.java:1037: Warning: Unnecessary; SDK_INT is never < 23 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\patternlockview\src\main\java\com\andrognito\patternlockview\PatternLockView.java:435: Warning: Custom view PatternLockView overrides onTouchEvent but not performClick [ClickableViewAccessibility]
+    public boolean onTouchEvent(MotionEvent event) {
+                   ~~~~~~~~~~~~
+
+   Explanation for issues of type "ClickableViewAccessibility":
+   If a View that overrides onTouchEvent or uses an OnTouchListener does not
+   also implement performClick and call it when clicks are detected, the View
+   may not handle accessibility actions properly. Logic handling the click
+   actions should ideally be placed in View#performClick as some accessibility
+   services invoke performClick when a click action should occur.
+
+0 errors, 10 warnings

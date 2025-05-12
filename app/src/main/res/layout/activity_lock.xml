@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pattern="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/text_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Draw your pattern to unlock"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
+    <com.andrognito.patternlockview.PatternLockView
+        android:id="@+id/pattern_lock_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        pattern:aspectRatioEnabled="true"
+        pattern:aspectRatio="square"
+        pattern:dotCount="3"
+        pattern:dotNormalSize="12dp"
+        pattern:dotSelectedSize="24dp"
+        pattern:pathWidth="4dp"
+        pattern:dotAnimationDuration="150"
+        pattern:pathEndAnimationDuration="100"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:layout_marginTop="16dp" />
+
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

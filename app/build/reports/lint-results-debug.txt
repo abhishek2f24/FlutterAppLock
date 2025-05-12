@@ -1,0 +1,549 @@
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\build.gradle:72: Warning: JCenter Maven repository is no longer receiving updates: newer library versions may be available elsewhere [JcenterRepositoryObsolete]
+        jcenter() // Optional; add if older libraries are used
+        ~~~~~~~~~
+
+   Explanation for issues of type "JcenterRepositoryObsolete":
+   The JCenter Maven repository is no longer accepting submissions of Maven
+   artifacts since 31st March 2021.  Ensure that the project is configured to
+   search in repositories with the latest versions of its dependencies.
+
+   https://developer.android.com/r/tools/jcenter-end-of-service
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\themes.xml:7: Error: colorPrimary has already been defined in this <style> [DuplicateDefinition]
+        <item name="colorPrimary">@color/design_default_color_on_primary</item>
+              ~~~~~~~~~~~~~~~~~~~
+    C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\themes.xml:4: Previously defined here
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\themes.xml:8: Error: colorPrimaryDark has already been defined in this <style> [DuplicateDefinition]
+        <item name="colorPrimaryDark">@color/cardview_dark_background</item>
+              ~~~~~~~~~~~~~~~~~~~~~~~
+    C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\themes.xml:5: Previously defined here
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\themes.xml:9: Error: colorAccent has already been defined in this <style> [DuplicateDefinition]
+        <item name="colorAccent">@color/cardview_shadow_end_color</item>
+              ~~~~~~~~~~~~~~~~~~
+    C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\themes.xml:6: Previously defined here
+
+   Explanation for issues of type "DuplicateDefinition":
+   You can define a resource multiple times in different resource folders;
+   that's how string translations are done, for example. However, defining the
+   same resource more than once in the same resource folder is likely an
+   error, for example attempting to add a new resource without realizing that
+   the name is already used, and so on.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:128: Error: Call requires API level 26 (current min is 23): android.content.ContextWrapper#startForegroundService [NewApi]
+        startForegroundService(serviceIntent)
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NewApi":
+   This check scans through all the Android API calls in the application and
+   warns about any calls that are not available on all versions targeted by
+   this application (according to its minimum SDK attribute in the manifest).
+
+   If you really want to use this API and don't need to support older devices
+   just set the minSdkVersion in your build.gradle or AndroidManifest.xml
+   files.
+
+   If your code is deliberately accessing newer APIs, and you have ensured
+   (e.g. with conditional execution) that this code will only ever be called
+   on a supported platform, then you can annotate your class or method with
+   the @TargetApi annotation specifying the local minimum SDK to apply, such
+   as @TargetApi(11), such that this check considers 11 rather than your
+   manifest file's minimum SDK as the required API level.
+
+   If you are deliberately setting android: attributes in style definitions,
+   make sure you place this in a values-vNN folder in order to avoid running
+   into runtime conflicts on certain devices where manufacturers have added
+   custom attributes whose ids conflict with the new ones on later platforms.
+
+   Similarly, you can use tools:targetApi="11" in an XML file to indicate that
+   the element will only be inflated in an adequate context.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\build.gradle:14: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdkVersion 33
+        ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdkVersion specifies that it has been tested with,
+   various compatibility modes kick in. This ensures that your application
+   continues to work, but it may look out of place. For example, if the
+   targetSdkVersion is less than 14, your app may get an option button in the
+   UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\menu\main_menu.xml:7: Error: Should use app:showAsAction with the appcompat library with xmlns:app="http://schemas.android.com/apk/res-auto" [AppCompatResource]
+        android:showAsAction="never" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AppCompatResource":
+   When using the appcompat library, menu resources should refer to the
+   showAsAction (or actionViewClass, or actionProviderClass) in the app:
+   namespace, not the android: namespace.
+
+   Similarly, when not using the appcompat library, you should be using the
+   android:showAsAction (or actionViewClass, or actionProviderClass)
+   attribute.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\item_app.xml:25: Warning: Use SwitchCompat from AppCompat or MaterialSwitch from Material library [UseSwitchCompatOrMaterialXml from androidx.appcompat]
+    <Switch
+    ^
+
+   Explanation for issues of type "UseSwitchCompatOrMaterialXml":
+   Use SwitchCompat from AppCompat or MaterialSwitch from Material library
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:12: Warning: Formatting %d followed by words ("sec"): This should probably be a plural rather than a string [PluralsCandidate]
+    <string name="unlock_timeout">Auto-lock timeout: %1$d sec</string>
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "PluralsCandidate":
+   This lint check looks for potential errors in internationalization where
+   you have translated a message which involves a quantity and it looks like
+   other parts of the string may need grammatical changes.
+
+   For example, rather than something like this:
+     <string name="try_again">Try again in %d seconds.</string>
+   you should be using a plural:
+      <plurals name="try_again">
+           <item quantity="one">Try again in %d second</item>
+           <item quantity="other">Try again in %d seconds</item>
+       </plurals>
+   This will ensure that in other languages the right set of translations are
+   provided for the different quantity classes.
+
+   (This check depends on some heuristics, so it may not accurately determine
+   whether a string really should be a quantity. You can use tools:ignore to
+   filter out false positives.
+
+   https://developer.android.com/guide/topics/resources/string-resource.html#Plurals
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_main_screen.xml:2: Warning: The resource R.layout.activity_main_screen appears to be unused [UnusedResources]
+<LinearLayout 
+^
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.colorBackground appears to be unused [UnusedResources]
+    <color name="colorBackground">#FFFFFF</color>
+           ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\colors.xml:7: Warning: The resource R.color.colorText appears to be unused [UnusedResources]
+    <color name="colorText">#212121</color>
+           ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\colors.xml:8: Warning: The resource R.color.colorTextSecondary appears to be unused [UnusedResources]
+    <color name="colorTextSecondary">#757575</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\colors.xml:9: Warning: The resource R.color.colorLockIcon appears to be unused [UnusedResources]
+    <color name="colorLockIcon">#F44336</color>
+           ~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\colors.xml:10: Warning: The resource R.color.colorUnlockIcon appears to be unused [UnusedResources]
+    <color name="colorUnlockIcon">#4CAF50</color>
+           ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\drawable\ic_backspace.xml:2: Warning: The resource R.drawable.ic_backspace appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-hdpi\ic_launcher_round.webp: Warning: The resource R.mipmap.ic_launcher_round appears to be unused [UnusedResources]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-hdpi\ic_unlock.webp: Warning: The resource R.mipmap.ic_unlock appears to be unused [UnusedResources]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\drawable\ic_unlock_background.xml:2: Warning: The resource R.drawable.ic_unlock_background appears to be unused [UnusedResources]
+<vector
+^
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\drawable-v24\ic_unlock_foreground.xml:1: Warning: The resource R.drawable.ic_unlock_foreground appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-hdpi\ic_unlock_round.webp: Warning: The resource R.mipmap.ic_unlock_round appears to be unused [UnusedResources]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:3: Warning: The resource R.string.select_apps appears to be unused [UnusedResources]
+    <string name="select_apps">Select Apps to Lock</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:4: Warning: The resource R.string.settings appears to be unused [UnusedResources]
+    <string name="settings">Settings</string>
+            ~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:5: Warning: The resource R.string.set_pattern appears to be unused [UnusedResources]
+    <string name="set_pattern">Set Pattern Lock</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.confirm_pattern appears to be unused [UnusedResources]
+    <string name="confirm_pattern">Confirm Pattern</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.pattern_set appears to be unused [UnusedResources]
+    <string name="pattern_set">Pattern set successfully</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:8: Warning: The resource R.string.pattern_incorrect appears to be unused [UnusedResources]
+    <string name="pattern_incorrect">Pattern incorrect</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:9: Warning: The resource R.string.pattern_too_short appears to be unused [UnusedResources]
+    <string name="pattern_too_short">Pattern too short, connect at least 4 dots</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:10: Warning: The resource R.string.patterns_not_match appears to be unused [UnusedResources]
+    <string name="patterns_not_match">Patterns don\'t match</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:11: Warning: The resource R.string.pattern_reset appears to be unused [UnusedResources]
+    <string name="pattern_reset">Pattern reset</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:12: Warning: The resource R.string.unlock_timeout appears to be unused [UnusedResources]
+    <string name="unlock_timeout">Auto-lock timeout: %1$d sec</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:13: Warning: The resource R.string.service_running appears to be unused [UnusedResources]
+    <string name="service_running">App Lock service is running</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:14: Warning: The resource R.string.service_started appears to be unused [UnusedResources]
+    <string name="service_started">App Lock service started</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:15: Warning: The resource R.string.service_stopped appears to be unused [UnusedResources]
+    <string name="service_stopped">App Lock service stopped</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:16: Warning: The resource R.string.no_apps_found appears to be unused [UnusedResources]
+    <string name="no_apps_found">No apps found</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:17: Warning: The resource R.string.draw_pattern appears to be unused [UnusedResources]
+    <string name="draw_pattern">Draw your pattern</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:18: Warning: The resource R.string.draw_pattern_again appears to be unused [UnusedResources]
+    <string name="draw_pattern_again">Draw pattern again to confirm</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:19: Warning: The resource R.string.reset_pattern appears to be unused [UnusedResources]
+    <string name="reset_pattern">Reset Pattern</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:20: Warning: The resource R.string.start_service appears to be unused [UnusedResources]
+    <string name="start_service">Start Service</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:21: Warning: The resource R.string.stop_service appears to be unused [UnusedResources]
+    <string name="stop_service">Stop Service</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:22: Warning: The resource R.string.cancel appears to be unused [UnusedResources]
+    <string name="cancel">Cancel</string>
+            ~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\strings.xml:24: Warning: The resource R.string.set_pattern_first appears to be unused [UnusedResources]
+    <string name="set_pattern_first">Please set up a pattern lock first</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\styles.xml:3: Warning: The resource R.style.Button_Primary appears to be unused [UnusedResources]
+    <style name="Button.Primary" parent="Widget.MaterialComponents.Button">
+           ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\styles.xml:9: Warning: The resource R.style.AppText_Title appears to be unused [UnusedResources]
+    <style name="AppText.Title" parent="TextAppearance.MaterialComponents.Headline6">
+           ~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\values\styles.xml:14: Warning: The resource R.style.AppText_Body appears to be unused [UnusedResources]
+    <style name="AppText.Body" parent="TextAppearance.MaterialComponents.Body1">
+           ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-anydpi-v26\ic_launcher.xml:2: Warning: The application adaptive icon is missing a monochrome tag [MonochromeLauncherIcon]
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+^
+
+   Explanation for issues of type "MonochromeLauncherIcon":
+   If android:roundIcon and android:icon are both in your manifest, you must
+   either remove the reference to android:roundIcon if it is not needed; or,
+   supply the monochrome icon in the drawable defined by the android:roundIcon
+   and android:icon attribute.
+
+   For example, if android:roundIcon and android:icon are both in the
+   manifest, a launcher might choose to use android:roundIcon over
+   android:icon to display the adaptive app icon. Therefore, your themed
+   application iconwill not show if your monochrome attribute is not also
+   specified in android:roundIcon.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-hdpi\ic_unlock.webp: Warning: The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-mdpi\ic_unlock.webp: Warning: The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-xhdpi\ic_unlock.webp: Warning: The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-xxhdpi\ic_unlock.webp: Warning: The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-xxxhdpi\ic_unlock.webp: Warning: The following unrelated icon files have identical contents: ic_launcher.webp, ic_unlock.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-hdpi\ic_unlock_round.webp: Warning: The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-mdpi\ic_unlock_round.webp: Warning: The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-xhdpi\ic_unlock_round.webp: Warning: The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-xxhdpi\ic_unlock_round.webp: Warning: The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp [IconDuplicates]
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\mipmap-xxxhdpi\ic_unlock_round.webp: Warning: The following unrelated icon files have identical contents: ic_launcher_round.webp, ic_unlock_round.webp [IconDuplicates]
+
+   Explanation for issues of type "IconDuplicates":
+   If an icon is repeated under different names, you can consolidate and just
+   use one of the icons and delete the others to make your application
+   smaller. However, duplicated icons usually are not intentional and can
+   sometimes point to icons that were accidentally overwritten or accidentally
+   not updated.
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\utils\LockUtils.kt:37: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+            prefs.edit().putString(PATTERN_KEY, hash).apply()
+            ~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\utils\PrefManager.kt:96: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        prefs.edit().putString("pin_code", pin).apply()
+        ~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\utils\PrefManager.kt:100: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        prefs.edit().putBoolean("pin_enabled", enabled).apply()
+        ~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\utils\PreferenceUtils.kt:22: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        prefs.edit().putBoolean(SERVICE_RUNNING, running).apply()
+        ~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\utils\PreferenceUtils.kt:30: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        prefs.edit().putBoolean(FIRST_TIME, firstTime).apply()
+        ~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\utils\PreferenceUtils.kt:39: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+        prefs.edit().putInt(UNLOCK_TIMEOUT, seconds).apply()
+        ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PatternSetupActivity.kt:32: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        binding.instructionText.text = "Draw a pattern to secure your apps"
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PatternSetupActivity.kt:41: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    binding.instructionText.text = "Pattern too short. Try again with at least 4 dots"
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PatternSetupActivity.kt:51: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                    binding.instructionText.text = "Draw the pattern again to confirm"
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PatternSetupActivity.kt:65: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        binding.instructionText.text = "Patterns didn't match. Try again"
+                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PinSetupActivity.kt:30: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        binding.instructionText.text = "Enter a 4-digit PIN"
+                                        ~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PinSetupActivity.kt:87: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            binding.instructionText.text = "Confirm your PIN"
+                                            ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\PinSetupActivity.kt:101: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                binding.instructionText.text = "PINs didn't match. Try again"
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:110: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $minutes min $remainingSeconds sec"
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:110: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $minutes min $remainingSeconds sec"
+                                ~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:110: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $minutes min $remainingSeconds sec"
+                                                           ~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:110: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $minutes min $remainingSeconds sec"
+                                                                                 ~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:112: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $seconds sec"
+                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:112: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $seconds sec"
+                                ~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\java\com\example\applock\activities\SettingsActivity.kt:112: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            textTimeout.text = "Auto-lock timeout: $seconds sec"
+                                                           ~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_app_selection.xml:24: Warning: Hardcoded string "No apps found", should use @string resource [HardcodedText]
+        android:text="No apps found"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_lock.xml:13: Warning: Hardcoded string "Draw your pattern to unlock", should use @string resource [HardcodedText]
+        android:text="Draw your pattern to unlock"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_lock.xml:37: Warning: Hardcoded string "Cancel", should use @string resource [HardcodedText]
+        android:text="Cancel"
+        ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_main.xml:12: Warning: Hardcoded string "Select Apps to Lock", should use @string resource [HardcodedText]
+        android:text="Select Apps to Lock"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_main.xml:19: Warning: Hardcoded string "Set Pattern Lock", should use @string resource [HardcodedText]
+        android:text="Set Pattern Lock"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_main.xml:26: Warning: Hardcoded string "Settings", should use @string resource [HardcodedText]
+        android:text="Settings"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_main_screen.xml:18: Warning: Hardcoded string "Main Menu", should use @string resource [HardcodedText]
+        android:title="Main Menu"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_main_screen.xml:26: Warning: Hardcoded string "Welcome to App Lock", should use @string resource [HardcodedText]
+        android:text="Welcome to App Lock"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_password_setup.xml:17: Warning: Hardcoded string "Password Setup", should use @string resource [HardcodedText]
+        android:title="Password Setup"/>
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_password_setup.xml:27: Warning: Hardcoded string "Enter Password", should use @string resource [HardcodedText]
+            android:hint="Enter Password"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_password_setup.xml:38: Warning: Hardcoded string "Confirm Password", should use @string resource [HardcodedText]
+            android:hint="Confirm Password"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_password_setup.xml:50: Warning: Hardcoded string "Current Password", should use @string resource [HardcodedText]
+            android:hint="Current Password"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_password_setup.xml:57: Warning: Hardcoded string "Set Password", should use @string resource [HardcodedText]
+        android:text="Set Password"/>
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pattern_setup.xml:23: Warning: Hardcoded string "Draw your pattern", should use @string resource [HardcodedText]
+        android:text="Draw your pattern"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pattern_setup.xml:55: Warning: Hardcoded string "Draw your pattern", should use @string resource [HardcodedText]
+        android:text="Draw your pattern"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pattern_setup.xml:69: Warning: Hardcoded string "Confirm Pattern", should use @string resource [HardcodedText]
+        android:text="Confirm Pattern"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:16: Warning: Hardcoded string "Set Up PIN", should use @string resource [HardcodedText]
+        android:title="Set Up PIN"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:27: Warning: Hardcoded string "Enter a 4-digit PIN", should use @string resource [HardcodedText]
+        android:text="Enter a 4-digit PIN"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:68: Warning: Hardcoded string "1", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn1" style="@style/PinButtonStyle" android:text="1"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:69: Warning: Hardcoded string "2", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn2" style="@style/PinButtonStyle" android:text="2"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:70: Warning: Hardcoded string "3", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn3" style="@style/PinButtonStyle" android:text="3"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:71: Warning: Hardcoded string "4", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn4" style="@style/PinButtonStyle" android:text="4"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:72: Warning: Hardcoded string "5", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn5" style="@style/PinButtonStyle" android:text="5"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:73: Warning: Hardcoded string "6", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn6" style="@style/PinButtonStyle" android:text="6"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:74: Warning: Hardcoded string "7", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn7" style="@style/PinButtonStyle" android:text="7"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:75: Warning: Hardcoded string "8", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn8" style="@style/PinButtonStyle" android:text="8"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:76: Warning: Hardcoded string "9", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn9" style="@style/PinButtonStyle" android:text="9"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:77: Warning: Hardcoded string "C", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btnClear" style="@style/PinButtonStyle" android:text="C"/>
+                                                                         ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:78: Warning: Hardcoded string "0", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btn0" style="@style/PinButtonStyle" android:text="0"/>
+                                                                     ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:79: Warning: Hardcoded string "⌫", should use @string resource [HardcodedText]
+        <Button android:id="@+id/btnDelete" style="@style/PinButtonStyle" android:text="⌫"/>
+                                                                          ~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_pin_setup.xml:88: Warning: Hardcoded string "PINs don't match", should use @string resource [HardcodedText]
+        android:text="PINs don't match"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_settings.xml:19: Warning: Hardcoded string "Auto-lock timeout: 30 sec", should use @string resource [HardcodedText]
+        android:text="Auto-lock timeout: 30 sec"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_settings.xml:33: Warning: Hardcoded string "Reset Pattern", should use @string resource [HardcodedText]
+        android:text="Reset Pattern"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_settings.xml:40: Warning: Hardcoded string "Start App Lock Service", should use @string resource [HardcodedText]
+        android:text="Start App Lock Service"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\activity_settings.xml:47: Warning: Hardcoded string "Stop App Lock Service", should use @string resource [HardcodedText]
+        android:text="Stop App Lock Service"
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\item_app.xml:13: Warning: Hardcoded string "App Icon", should use @string resource [HardcodedText]
+        android:contentDescription="App Icon" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\item_app.xml:20: Warning: Hardcoded string "App Name", should use @string resource [HardcodedText]
+        android:text="App Name"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\item_locked_app.xml:14: Warning: Hardcoded string "App Icon", should use @string resource [HardcodedText]
+        android:contentDescription="App Icon" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\item_locked_app.xml:21: Warning: Hardcoded string "App Name", should use @string resource [HardcodedText]
+        android:text="App Name"
+        ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\layout\item_locked_app.xml:30: Warning: Hardcoded string "Unlock Icon", should use @string resource [HardcodedText]
+        android:contentDescription="Unlock Icon" />
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\ASUS\AndroidStudioProjects\app_lock\FlutterAppLock\app\src\main\res\menu\main_menu.xml:5: Warning: Hardcoded string "Settings", should use @string resource [HardcodedText]
+        android:title="Settings"
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+5 errors, 112 warnings

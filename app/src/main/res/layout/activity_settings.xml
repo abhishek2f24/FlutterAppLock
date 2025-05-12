@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <FrameLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/text_timeout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto-lock timeout: 30 sec"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <SeekBar
+        android:id="@+id/seekbar_timeout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10" />
+
+    <Button
+        android:id="@+id/btn_reset_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset Pattern"
+        android:layout_marginTop="24dp" />
+
+    <Button
+        android:id="@+id/btn_start_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start App Lock Service"
+        android:layout_marginTop="12dp" />
+
+    <Button
+        android:id="@+id/btn_stop_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop App Lock Service"
+        android:layout_marginTop="12dp" />
+</LinearLayout>
